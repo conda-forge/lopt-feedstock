@@ -1,6 +1,7 @@
 context:
   name: lopt
-  version: "1.0.0"
+  version: "1.1.0"
+  python_min: "3.12"
 
 package:
   name: ${{ name }}
@@ -8,7 +9,7 @@ package:
 
 source:
   url: https://gitlab.com/earthscope/public/epic/passoft/lopt/-/archive/v${{ version }}/lopt-v${{ version }}.tar.gz
-  sha256: b74b9036b12b51634792765e3a26a62476bdd0dbb5ec54e86867bcb17fd9d77d
+  sha256: f5284cee90a560faee39beaac1b26f591ed453824a69d3f2b3f89139d0ae2b44
 
 build:
   noarch: python
@@ -22,7 +23,7 @@ requirements:
   host:
     - python ${{ python_min }}.*
     - pip
-    - setuptools
+    - setuptools >=77
   run:
     - python >=${{ python_min }}
     - pyside6
